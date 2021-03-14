@@ -1,0 +1,4 @@
+#!c:\users\91954\pycharmprojects\pythonproject1\venv\scripts\python.exe
+
+import systems.parse
+systems.parse.main()
