@@ -1,4 +1,0 @@
-#!c:\users\91954\pycharmprojects\pythonproject1\venv\scripts\python.exe
-
-import systems.lexer
-systems.lexer.main()
