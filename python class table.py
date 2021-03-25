@@ -26,24 +26,26 @@ def findWaiterNameByTableNo(tables,v):
 
 
 n=int(input())
-li=[]
+tables=[]
 for _ in range(n):
     id=int(input())
     name=input().rstrip()
     status=input()
-    li.append(Table(id,name,status))
+    tables.append(Table(id, name, status))
 
 v = int(input())
 
-d=findWaiterWiseTotalNoOfTables(li)
+d=findWaiterWiseTotalNoOfTables(tables)
 for key in sorted(d.keys()):
     print(key+"-"+str(d[key]))
 
-name = findWaiterNameByTableNo(li,v)
+name = findWaiterNameByTableNo(tables, v)
 if name is None:
     print("No waiter found")
 else:
     print(name)
+
+
 
 
 
