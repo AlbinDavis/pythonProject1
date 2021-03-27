@@ -16,9 +16,6 @@ class Team:
         for i in p:
             if i.playerScore ==s:
                 print(i.playerScore,i.playerName,i.playerCountry)
-
-
-
 n=int(input())
 p=[]
 for i in range(n):
