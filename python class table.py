@@ -14,6 +14,7 @@ def findWaiterWiseTotalNoOfTables(tables):
             d[i.waiterName] = 1
     return d
 
+
 # The return statement terminates the function execution.
 # A function can have multiple return statements. When any of them is executed, the function terminates.
 
