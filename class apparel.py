@@ -28,7 +28,7 @@ for i in range(n):
         k=input()
         v=int(input())
         instock[k]=v
-    applist.append(Apparel(appbrand,apptype,price,instock))
+        applist.append(Apparel(appbrand,apptype,price,instock))
 brand=input()
 type=input()
 appsize=input()

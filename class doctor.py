@@ -6,7 +6,6 @@ class Doctor:
         self.consfee = consfee
         self.sundayavl = sundayavl
 
-
 class Hospital:
     def getDoctorList(depname,doclist):
         li=[]
