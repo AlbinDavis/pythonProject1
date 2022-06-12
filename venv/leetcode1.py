@@ -96,33 +96,100 @@ def isRotated(str1="fsbcnuvqhffbsaqxwp",str2= "wpfsbcnuvqhffbsaqx"):
 
 
 
-def longestSubstrDistinctChars(self, s=""):
-    k = set()
-    k.add(s[0])
-    newString = s[0]
-    l = []
-    for i in range(1, len(s)):
-        if s[i] in k:
-            k.clear()
-            k.add(s[i])
-            l.append(newString)
-            newString = s[i]
+def longestSubstrDistinctChars(s="aewergrththy"):
+    k = ""
+    l = ""
+    for j in range(len(s)):
+        if s[j] in k:
+            temp=k.index(j) + 1
+            k= j
+            if len(l) < len(newString):
+                l = newString
+            newString = s[j]
+            j += 1
         else:
-            k.add(s[i])
-            newString += s[i]
-    l.append(newString)
-    return (len(max(l, key=len)))
+            k+=s[j]
+            j += 1
+
+    if len(l) < len(newString):
+        l = newString
+    return len(l)
+
+    # k = {}
+    # k[s[0]]=0
+    # newString = s[0]
+    # l = []
+    # j = 1
+    # while (j < len(s)):
+    #     if s[j] in k:
+    #         j=k[s[j]]+1
+    #         k.clear()
+    #         k[s[j]] = j
+    #         l.append(newString)
+    #         newString = s[j]
+    #         j+=1
+    #     else:
+    #         k[s[j]]=j
+    #         newString += s[j]
+    #         j+=1
+    #
+    # l.append(newString)
+    # return (len(max(l, key=len)))
 
 
 
+#############Maximum number of characters between any two same character#
+def maxChars(self, s):
+    d = c(s)
+    m = -1
+    for i in s:
+        if d[i] > 1:
+            d[i] = 1
+            j = len(s) - 1
+            while (s[j] != i):
+                j -= 1
+            m = max((j - 1) - s.index(i), m)
+
+    return m
 
 
+# m=-1
+# first_index=[-1 for i in range(225)]
+# d=c(s)
+# for i in range(len(s)):
+#     start_index=first_index[ord(s[i])]
 
+#     if start_index ==-1:
+#         first_index[ord(s[i])]=i
+
+#     else:
+#         m=max(m,i-start_index-1)
+
+# return m
+
+
+################Run Length Encoding#####################
+def encode(a="aasasdasfc"):
+    if len(a)==1:
+        return a+"1"
+    s=""
+    c=1
+    for i in range(1,len(a)):
+        if a[i]!=a[i-1]:
+            s+=a[i-1]+str(c)
+            c=1
+        else:
+            c+=1
+    s+=a[len(a)-1]+str(c)
+    return s
 
 # print(isRotated())
 # print(areIsomorphic())
 # print(shortestDistance())
 # print(palindromeNum())
 # print(reverseVovles())
-print(longestSubstrDistinctChars())
+# print(longestSubstrDistinctChars())
+# print(encode())
+
+
 
