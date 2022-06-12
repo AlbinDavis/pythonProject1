@@ -183,6 +183,18 @@ def encode(a="aasasdasfc"):
     s+=a[len(a)-1]+str(c)
     return s
 
+
+
+from collections import Counter as c
+def isAnagram(a='b',b='d'):
+    c1 = c(a)
+    c2 = c(b)
+    if len(c1)!=len(c2):
+        return False
+    return c1==c2
+
+
+
 # print(isRotated())
 # print(areIsomorphic())
 # print(shortestDistance())
@@ -190,6 +202,5 @@ def encode(a="aasasdasfc"):
 # print(reverseVovles())
 # print(longestSubstrDistinctChars())
 # print(encode())
-
-
+# print(isAnagram())
 
