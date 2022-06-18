@@ -193,7 +193,29 @@ def isAnagram(a='b',b='d'):
         return False
     return c1==c2
 
+def ParenthesisChecker(x="({[]})"):
+    s = ('{', '(', '[')
+    stack = []
+    for i in x:
+        if i in s:
+            stack.append(i)
+        else:
+            if not stack:
+                return False
+            if i == '}':
+                if stack.pop() != '{':
+                    return False
 
+            if i == ']':
+                if stack.pop() != '[':
+                    return False
+            if i == ')':
+                if stack.pop() != '(':
+                    return False
+
+    if stack:
+        return False
+    return True
 
 # print(isRotated())
 # print(areIsomorphic())
@@ -203,4 +225,5 @@ def isAnagram(a='b',b='d'):
 # print(longestSubstrDistinctChars())
 # print(encode())
 # print(isAnagram())
+# print(ParenthesisChecker())
 
