@@ -193,7 +193,8 @@ def isAnagram(a='b',b='d'):
         return False
     return c1==c2
 
-def ParenthesisChecker(x="({[]})"):
+def ParenthesisChecker(a="((((("):
+
     s = ('{', '(', '[')
     stack = []
     for i in x:
@@ -217,6 +218,48 @@ def ParenthesisChecker(x="({[]})"):
         return False
     return True
 
+# Input:
+# N = 4, arr[] = [1 3 2 4]
+# Output:
+# 3 4 4 -1
+# Explanation:
+# In the array, the next larger element
+# to 1 is 3 , 3 is 4 , 2 is 4 and for 4 ?
+# since it doesn't exist, it is -1.
+def nextLargerElement(self, arr, n):
+    stack = []
+    result = []
+    stack.append(arr[len(arr) - 1])
+    result.append(-1)
+    for i in range(len(arr) - 2, -1, -1):
+        while (len(stack) > 0 and arr[i] > stack[-1]):
+            stack.pop()
+        if stack:
+            result.append(stack[-1])
+            stack.append(arr[i])
+        else:
+            result.append(-1)
+            stack.append(arr[i])
+    return result[::-1]
+
+
+def calculateSpan(a=[100, 80, 60, 70, 60, 75 ,85]):
+    stack = []
+    stack.append(0)
+    l = []
+    l.append(1)
+    for i in range(1,len(a)):
+        while (len(stack) > 0) and (a[stack[-1]] <= a[i]):
+            stack.pop()
+        if not stack:
+            l.append(i + 1)
+            stack.append(i)
+        else:
+            l.append(i - stack[-1])
+            stack.append(i)
+    return l
+
+
 # print(isRotated())
 # print(areIsomorphic())
 # print(shortestDistance())
@@ -226,4 +269,5 @@ def ParenthesisChecker(x="({[]})"):
 # print(encode())
 # print(isAnagram())
 # print(ParenthesisChecker())
+# print(calculateSpan())
 
