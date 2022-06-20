@@ -242,7 +242,17 @@ def nextLargerElement(self, arr, n):
             stack.append(arr[i])
     return result[::-1]
 
-
+# Input:
+# N = 7, price[] = [100 80 60 70 60 75 85]
+# Output:
+# 1 1 1 2 1 4 6
+# Explanation:
+# Traversing the given input span for 100
+# will be 1, 80 is smaller than 100 so the
+# span is 1, 60 is smaller than 80 so the
+# span is 1, 70 is greater than 60 so the
+# span is 2 and so on. Hence the output will
+# be 1 1 1 2 1 4 6.
 def calculateSpan(a=[100, 80, 60, 70, 60, 75 ,85]):
     stack = []
     stack.append(0)
@@ -259,7 +269,15 @@ def calculateSpan(a=[100, 80, 60, 70, 60, 75 ,85]):
             stack.append(i)
     return l
 
-
+def check(A=[1,2,5,4,0],B=[2,4,5,0,1]):
+    c1=c(A)
+    c2=c(B)
+    for i in c1:
+        if i in c2 and c2[i]==c1[i]:
+            continue
+        else:
+            return 0
+    return 1
 # print(isRotated())
 # print(areIsomorphic())
 # print(shortestDistance())
@@ -270,4 +288,7 @@ def calculateSpan(a=[100, 80, 60, 70, 60, 75 ,85]):
 # print(isAnagram())
 # print(ParenthesisChecker())
 # print(calculateSpan())
+# print(check())
+
+
 
