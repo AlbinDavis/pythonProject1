@@ -269,6 +269,8 @@ def calculateSpan(a=[100, 80, 60, 70, 60, 75 ,85]):
             stack.append(i)
     return l
 
+# Given two arrays A and B of equal size N, the task is to find if given arrays are equal or not. Two arrays are said to be equal if both of them contain same set of elements, arrangements (or permutation) of elements may be different though.
+# Note : If there are repetitions, then counts of repeated elements must also be same for two array to be equal.
 def check(A=[1,2,5,4,0],B=[2,4,5,0,1]):
     c1=c(A)
     c2=c(B)
