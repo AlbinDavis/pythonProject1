@@ -115,26 +115,27 @@ def longestSubstrDistinctChars(s="aewergrththy"):
         l = newString
     return len(l)
 
-    # k = {}
-    # k[s[0]]=0
-    # newString = s[0]
-    # l = []
-    # j = 1
-    # while (j < len(s)):
-    #     if s[j] in k:
-    #         j=k[s[j]]+1
-    #         k.clear()
-    #         k[s[j]] = j
-    #         l.append(newString)
-    #         newString = s[j]
-    #         j+=1
-    #     else:
-    #         k[s[j]]=j
-    #         newString += s[j]
-    #         j+=1
-    #
-    # l.append(newString)
-    # return (len(max(l, key=len)))
+def longestSubstrDistinctChars2(s="aewergrththy"):
+    k = {}
+    k[s[0]]=0
+    newString = s[0]
+    l = []
+    j = 1
+    while (j < len(s)):
+        if s[j] in k:
+            j=k[s[j]]+1
+            k.clear()
+            k[s[j]] = j
+            l.append(newString)
+            newString = s[j]
+            j+=1
+        else:
+            k[s[j]]=j
+            newString += s[j]
+            j+=1
+
+    l.append(newString)
+    return (len(max(l, key=len)))
 
 
 
