@@ -281,6 +281,29 @@ def check(A=[1,2,5,4,0],B=[2,4,5,0,1]):
         else:
             return 0
     return 1
+
+def kthElement(arr1=[1,2], arr2=[3,4,5,6], k=5):
+    i = 0
+    j = 0
+    l = []
+    c = 0
+    while (i < len(arr1) and j < len(arr2)):
+
+
+
+        if (arr1[i] < arr2[j]):
+            l.append(arr1[i])
+            i += 1
+        else:
+            l.append(arr2[j])
+            j += 1
+    if i == len(arr1):
+        l += arr2[j:]
+        return l[k - 1]
+    if j == len(arr2):
+        l += arr1[i:]
+        return l[k - 1]
+    return l[k - 1]
 # print(isRotated())
 # print(areIsomorphic())
 # print(shortestDistance())
@@ -292,6 +315,7 @@ def check(A=[1,2,5,4,0],B=[2,4,5,0,1]):
 # print(ParenthesisChecker())
 # print(calculateSpan())
 # print(check())
+# print(kthElement())
 
 
 
